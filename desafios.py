@@ -24,7 +24,8 @@ def listar_tarefas():
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
-    pass
+    for idx, task in enumerate(tarefas):
+        print(f"Tarefa #{idx+1}: {task}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
@@ -35,8 +36,12 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
-    pass
-
+    task = tarefas[indice-1]
+    if not task.startswith("ok - "):
+        tarefas[indice-1] = "ok - " + task
+        print(f"Tarefa: {task} concluída")
+    else:
+        print(f"Tarefa: '{tarefas[indice-1][5:]}' já concluída")
 
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
@@ -102,4 +107,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
