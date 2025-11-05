@@ -64,7 +64,11 @@ def buscar_tarefa(nome):
     Dica: use um loop para percorrer a lista e comparar strings.
     """
     # TODO: implementar lógica de busca
-    pass
+    for task in tarefas:
+        if nome == task:
+            print(f"Tarefa '{nome}' existe!")
+        else:
+            print(f"Tarefa '{nome}' não existe!")
 
 
 # Desafio 06: Menu interativo (opcional)
